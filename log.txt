@@ -1,121 +1,16 @@
-
------------------
-Pulling command from "random.txt" file...
-
------------------
-Searching for the song ""All the Stars""...
-Artist[1]: Kendrick Lamar
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Artist[2]: SZA
-Song name: All The Stars (with SZA)
-Album (album): Black Panther The Album Music From And Inspired By
-
------------------
-Pulling command from "random2.txt" file...
-Pulling command from "random2.txt" file...
-
------------------
-Sorry, "do-what-it-says" is not a valid command.
-
------------------
-Pulling command from "random2.txt" file...
-
------------------
-The do-what-it-says command is already running. Choose another command.
-
------------------
-Pulling command from "random2.txt" file...
-
------------------
-
------------------
-The 'do-what-it-says' command is already running. Choose another command.
-Pulling command from "random.txt" file...
-
------------------
-
------------------
-Searching for the song ""All the Stars""...
-Artist[2]: SZA
-Artist[1]: Kendrick Lamar
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Song name: All The Stars (with SZA)
-Album (album): Black Panther The Album Music From And Inspired By
-Pulling command from "random.txt" file...
-
------------------
-Searching for the song "All the Stars"...
-
------------------
-Artist[1]: Kendrick Lamar
-Song name: All The Stars (with SZA)
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Album (album): Black Panther The Album Music From And Inspired By
-Artist[2]: SZA
-
------------------
-Fetching the last 20 tweets from "BlackPanther653"...
-[Sat Mar 31 16:47:54 +0000 2018] Black Panther vs. Iron Man. My suit would absorb anything he could throw at me. Once scratch from my claws and he w… https://t.co/QSo0jbRWsO
-[Sat Mar 31 16:46:43 +0000 2018] Black Panther vs. Batman? I'm richer and don't rely on silly gadgets. Of course it would be the Black Panther!
-[Sat Mar 31 16:45:00 +0000 2018] Who would win? Black Panther or Captain America? Of course the Black Panther!
-[Sat Mar 31 16:44:26 +0000 2018] Who would win? Blank Panther or Wolverine? Of course the Blank Panther!
-[Sat Mar 31 16:42:56 +0000 2018] Klaw had it coming, but I should have landed the killing blow...
-[Fri Mar 30 13:15:44 +0000 2018] Wakanda is home to beautiful beaches, lush jungles and serene plains. Book your trip to Wakanda today!
-[Fri Mar 30 12:52:52 +0000 2018] I never freeze. Who do you think I am? Captain America?
-[Fri Mar 30 12:48:44 +0000 2018] Now introducing Vibranium flavored Pop-Tarts! They contain all the fuel you need to start your day off right.
-[Fri Mar 30 12:44:04 +0000 2018] I'm so glad to see so many people supporting my movie. After many centuries we are ready to share our resources and… https://t.co/as9l8sB5gn
-[Fri Mar 30 12:36:28 +0000 2018] Wakanda forever!!!
-Searching for the song "All the stars by RZA"...
-
------------------
-
------------------
-Searching for the song "All the stars RZA"...
-Searching for the song "All the stars"...
-
------------------
-Artist[1]: Kendrick Lamar
-Song name: All The Stars (with SZA)
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Album (album): Black Panther The Album Music From And Inspired By
-Artist[2]: SZA
-
------------------
-Searching for the song "All the stars by Kendrick Lamar"...
-Artist[1]: Kendrick Lamar
-Artist[2]: SZA
-Song name: All The Stars (with SZA)
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Album (album): Black Panther The Album Music From And Inspired By
-Searching for the song "All the stars by Kendrick Lamar"...
-
------------------
-Artist[1]: Kendrick Lamar
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Artist[2]: SZA
-Song name: All The Stars (with SZA)
-Album (album): Black Panther The Album Music From And Inspired By
-Searching for the song "All the stars by Kendrick Lamar"...
-
------------------
-Artist[1]: Kendrick Lamar
-Artist[2]: SZA
-Song name: All The Stars (with SZA)
-Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
-Album (album): Black Panther The Album Music From And Inspired By
 Fetching the last 20 tweets from "BlackPanther653"...
 
 -----------------
 [Sat Mar 31 16:47:54 +0000 2018] Black Panther vs. Iron Man. My suit would absorb anything he could throw at me. Once scratch from my claws and he w… https://t.co/QSo0jbRWsO
 [Sat Mar 31 16:46:43 +0000 2018] Black Panther vs. Batman? I'm richer and don't rely on silly gadgets. Of course it would be the Black Panther!
-[Sat Mar 31 16:44:26 +0000 2018] Who would win? Blank Panther or Wolverine? Of course the Blank Panther!
-[Fri Mar 30 13:15:44 +0000 2018] Wakanda is home to beautiful beaches, lush jungles and serene plains. Book your trip to Wakanda today!
-[Fri Mar 30 12:52:52 +0000 2018] I never freeze. Who do you think I am? Captain America?
-[Fri Mar 30 12:48:44 +0000 2018] Now introducing Vibranium flavored Pop-Tarts! They contain all the fuel you need to start your day off right.
-[Sat Mar 31 16:42:56 +0000 2018] Klaw had it coming, but I should have landed the killing blow...
 [Sat Mar 31 16:45:00 +0000 2018] Who would win? Black Panther or Captain America? Of course the Black Panther!
+[Sat Mar 31 16:44:26 +0000 2018] Who would win? Blank Panther or Wolverine? Of course the Blank Panther!
+[Fri Mar 30 12:48:44 +0000 2018] Now introducing Vibranium flavored Pop-Tarts! They contain all the fuel you need to start your day off right.
 [Fri Mar 30 12:44:04 +0000 2018] I'm so glad to see so many people supporting my movie. After many centuries we are ready to share our resources and… https://t.co/as9l8sB5gn
 [Fri Mar 30 12:36:28 +0000 2018] Wakanda forever!!!
+[Sat Mar 31 16:42:56 +0000 2018] Klaw had it coming, but I should have landed the killing blow...
+[Fri Mar 30 13:15:44 +0000 2018] Wakanda is home to beautiful beaches, lush jungles and serene plains. Book your trip to Wakanda today!
+[Fri Mar 30 12:52:52 +0000 2018] I never freeze. Who do you think I am? Captain America?
 Fetching the last 20 tweets from "BarackObama"...
 
 -----------------
@@ -144,41 +39,45 @@ Searching for the song "The Sign Ace of Base"...
 -----------------
 Artist[1]: Ace of Base
 Song name: The Sign
-Album (album): The Sign (US Album) [Remastered]
 Preview Link: https://open.spotify.com/track/0hrBpAOgrt8RXigk83LLNE
+Album (album): The Sign (US Album) [Remastered]
+Searching for the song "Hurt by Johnny Cash"...
 
 -----------------
-Sorry, "spotify-this-son" is not a valid command.
+Artist[1]: Mega Tracks Karaoke Band
+Preview Link: https://open.spotify.com/track/2vMdoCiSktZL4KSKup26um
+Song name: Hurt (Originally Performed by Johnny Cash) [Karaoke Version]
+Album (single): Hurt (Originally Performed by Johnny Cash) [Karaoke Version]
+
+-----------------
 Searching for the movie "Mr Nobody"...
-
------------------
-Year: 2009
-IMDB Rating: 7.9/10
-Country: Belgium, Germany, Canada, France, USA, UK
-Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
-Actor(s): Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
-Rotten Tomatoes Rating: 66%
 Title: Mr. Nobody
+IMDB Rating: 7.9/10
+Plot: A boy stands on a station platform as a train is about to leave. Should he go with his mother or stay with his father? Infinite possibilities arise from this decision. As long as he doesn't choose, anything is possible.
+Year: 2009
+Rotten Tomatoes Rating: 66%
 Language: English, Mohawk
+Actor(s): Jared Leto, Sarah Polley, Diane Kruger, Linh Dan Pham
+Country: Belgium, Germany, Canada, France, USA, UK
+Searching for the movie "Black Panther"...
 
 -----------------
-Searching for the movie "Remember the titans"...
-Title: Remember the Titans
-Year: 2000
+Title: Black Panther
+Rotten Tomatoes Rating: 97%
 IMDB Rating: 7.8/10
-Rotten Tomatoes Rating: 73%
+Plot: T'Challa, the King of Wakanda, rises to the throne in the isolated, technologically advanced African nation, but his claim is challenged by a vengeful outsider who was a childhood victim of T'Challa's father's mistake.
+Year: 2018
+Language: Swahili, Nama, English, Xhosa, Korean
+Actor(s): Chadwick Boseman, Michael B. Jordan, Lupita Nyong'o, Danai Gurira
 Country: USA
-Language: English
-Plot: The true story of a newly appointed African-American coach and his high school team on their first season as a racially integrated unit.
-Actor(s): Denzel Washington, Will Patton, Wood Harris, Ryan Hurst
 Pulling command from "random.txt" file...
 
 -----------------
+Searching for the song "All the Stars"...
 
 -----------------
-Searching for the song "All the Stars"...
 Artist[1]: Kendrick Lamar
-Artist[2]: SZA
 Song name: All The Stars (with SZA)
 Preview Link: https://open.spotify.com/track/3GCdLUSnKSMJhs4Tj6CV3s
+Artist[2]: SZA
 Album (album): Black Panther The Album Music From And Inspired By

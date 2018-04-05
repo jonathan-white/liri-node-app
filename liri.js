@@ -128,7 +128,7 @@ var actions = {
 			if (!(fileCommand === "do-what-it-says")){
 				actions.execute(fileCommand, fileQuery);
 			}else {
-				actions.invalidCommand("The 'do-what-it-says' command is already running. Choose another command.");
+				actions.displayMessage("The 'do-what-it-says' command is already running. Choose another command.");
 			}
 
 		});
@@ -151,7 +151,7 @@ var actions = {
 			query = query || 'random.txt';
 			actions.callAPI('random','Pulling command from "'+ query +'" file...',query);
 		} else {
-			actions.invalidCommand('Sorry, "'+ command +'" is not a valid command.');
+			actions.displayMessage('Sorry, "'+ command +'" is not a valid command.');
 		}		
 	},
 
@@ -159,10 +159,15 @@ var actions = {
 	// This function both consoles & writes to a log file the specified message 
 	// Additionally, based on the entered command, the associated API function is called 
 	callAPI: (command,message,query) => {
+		actions.displayMessage(message);
+		actions[command](query);
+	},
+
+	// Post specified message to both the console and log file
+	displayMessage: (message) => {
 		console.log(message);
 		actions.writeToLogFile('\r\n-----------------');
 		actions.writeToLogFile(message);
-		actions[command](query);
 	},
 
 	// The writeToLogFile function writes the specified content to the log.txt file
@@ -171,13 +176,6 @@ var actions = {
 			if (err) throw err;
 		});	
 	},
-
-	// Notify user the command they entered was invalid
-	invalidCommand: (message) => {
-		console.log(message);
-		actions.writeToLogFile('\r\n-----------------');
-		actions.writeToLogFile(message);
-	}
 };
 
 // Start the app!
