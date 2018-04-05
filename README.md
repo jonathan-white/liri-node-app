@@ -8,7 +8,7 @@ LIRI is a Language Intrepretation and Recognition Interface that takes in a comm
 
 To use this app you will need your own set of API keys for the Twitter and Spotify APIs.
 
-$ node liri.js '<enter command here>' '<enter query here>'
+$ node liri.js '[enter command here]' '[enter query here]'
 
 Example: $ node liri.js movie-this "Black Panther"
 
@@ -43,5 +43,5 @@ Example: $ node liri.js movie-this "Black Panther"
 
 ## Author
 
-This project is maintained and written by 
+This project was written by 
 [Jon White](https://jonathan-white.github.io/)
