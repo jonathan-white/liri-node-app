@@ -18,6 +18,8 @@ const omdb = keys.omdb.api_key || 'trilogy';
 var actions = {
 	// The twitter function calls the Twitter API and returns the selected user's last 20 tweets
 	twitter: (handle) => {
+		handle = handle || 'BlackPanther653';
+		actions.displayMessage('Fetching the last 20 tweets from "'+ handle +'"...');
 		client.get('statuses/user_timeline',{screen_name: handle,count: 20}, (error, tweet, response) => {
 			if(!error){
 				// Loop through and display/log returned tweets 
@@ -36,6 +38,8 @@ var actions = {
 	// The spotify function searches the Spotify API for the specified song
 	// Prints/logs details about the song including artist(s), song name, preview link & album 
 	spotify: (song) => {
+		song = song || 'The Sign Ace of Base';
+		actions.displayMessage('Searching for the song "'+ song +'"...');
 		spotify.search({ type: 'track', query: song, limit: 1 }, (err, data) => {
 			if (err) {
 				actions.writeToLogFile('Error occurred: ' + err);
@@ -72,6 +76,8 @@ var actions = {
 	// The omdb function searches the OMDB API for the specified movie
 	// Prints/logs details about the movie
 	omdb: (movie) => {
+		movie = movie || 'Mr Nobody';
+		actions.displayMessage('Searching for the movie "'+ movie +'"...');
 		request('http://www.omdbapi.com/?t='+ encodeURIComponent(movie) +'&apikey=' + omdb, (error, response, body) => {
 			if (error) {
 				actions.writeToLogFile('Error occurred: ' + error);
@@ -110,6 +116,8 @@ var actions = {
 
 	// The random function executes a command from the random.txt file
 	random: (file) => {
+		file = file || 'random.txt';
+		actions.displayMessage('Pulling command from "'+ file +'" file...');
 		// Read data from the file
 		fs.readFile(file, 'utf8', (err, data) => {
 			if (err) throw err;
@@ -134,33 +142,20 @@ var actions = {
 		});
 	},
 
-	// The execute function takes in command and query parameters. Based on the chosen command,
-	// a different API is called using the callAPI function 
-	// Use default query values if user does not specify a value
+	// The execute function takes in command and query parameters. 
+	// Based on the chosen command a different API is called
 	execute: (command, query) => {
 		if (command === "my-tweets") {
-			query = query || 'BlackPanther653';
-			actions.callAPI('twitter','Fetching the last 20 tweets from "'+ query +'"...',query);
+			actions['twitter'](query);
 		} else if (command === "spotify-this-song") {
-			query = query || 'The Sign Ace of Base';
-			actions.callAPI('spotify','Searching for the song "'+ query +'"...',query);
+			actions['spotify'](query);
 		} else if (command === "movie-this") {
-			query = query || 'Mr Nobody';
-			actions.callAPI('omdb','Searching for the movie "'+ query +'"...',query);
+			actions['omdb'](query);
 		} else if (command === "do-what-it-says") {
-			query = query || 'random.txt';
-			actions.callAPI('random','Pulling command from "'+ query +'" file...',query);
+			actions['random'](query);
 		} else {
 			actions.displayMessage('Sorry, "'+ command +'" is not a valid command.');
 		}		
-	},
-
-	// The callAPI function takes in three parameters (command, message and query)
-	// This function both consoles & writes to a log file the specified message 
-	// Additionally, based on the entered command, the associated API function is called 
-	callAPI: (command,message,query) => {
-		actions.displayMessage(message);
-		actions[command](query);
 	},
 
 	// Post specified message to both the console and log file
