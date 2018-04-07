@@ -1,3 +1,4 @@
+// TODO: Allow switching between using Inquirer for input handling or standard input
 require("dotenv").config();
 
 // Create variable to store imported keys info
@@ -8,6 +9,7 @@ const Spotify = require('node-spotify-api');
 const Twitter = require('twitter');
 const request = require('request');
 const fs = require('fs');
+const inquirer = require('inquirer');
 
 // Create variables to store keys for Twitter & Spotify
 const spotify = new Spotify(keys.spotify);
@@ -15,7 +17,7 @@ const client = new Twitter(keys.twitter);
 const omdb = keys.omdb.api_key || 'trilogy';
 
 // Store all functions in the 'actions' object
-var actions = {
+const actions = {
 	// The twitter function calls the Twitter API and returns the selected user's last 20 tweets
 	twitter: (handle) => {
 		handle = handle || 'BlackPanther653';
@@ -25,11 +27,11 @@ var actions = {
 				// Loop through and display/log returned tweets 
 				for (var i = 0; i < tweet.length; i++) {
 					console.log('['+tweet[i].created_at + '] ' + tweet[i].text);
-					actions.writeToLogFile('['+tweet[i].created_at + '] ' + tweet[i].text);
+					actions.writeToLogFile('log.txt','['+tweet[i].created_at + '] ' + tweet[i].text);
 				}
 			}else {
 				// If there is an error display/log the error message
-				actions.writeToLogFile('Error occurred: ' + error);
+				actions.writeToLogFile('log.txt','Error occurred: ' + error);
 				return console.log('Error occurred: ' + error);
 			}
 		});
@@ -42,7 +44,7 @@ var actions = {
 		actions.displayMessage('Searching for the song "'+ song +'"...');
 		spotify.search({ type: 'track', query: song, limit: 1 }, (err, data) => {
 			if (err) {
-				actions.writeToLogFile('Error occurred: ' + err);
+				actions.writeToLogFile('log.txt','Error occurred: ' + err);
 				return console.log('Error occurred: ' + err);
 			}
 			const result = data.tracks.items;
@@ -57,7 +59,7 @@ var actions = {
 				// Display list of artists
 				for (var r = 0; r < artists.length; r++) {
 					console.log('Artist['+ (r + 1)+']: '+ artists[r].name);
-					actions.writeToLogFile('Artist['+ (r + 1)+']: '+ artists[r].name);
+					actions.writeToLogFile('log.txt','Artist['+ (r + 1)+']: '+ artists[r].name);
 				}
 
 				// Display data in console
@@ -66,9 +68,9 @@ var actions = {
 				console.log('Album ('+ albumType +'): ' + album);
 
 				// Write data to log file
-				actions.writeToLogFile('Song name: ' + song);
-				actions.writeToLogFile('Preview Link: ' + link);
-				actions.writeToLogFile('Album ('+ albumType +'): ' + album);
+				actions.writeToLogFile('log.txt','Song name: ' + song);
+				actions.writeToLogFile('log.txt','Preview Link: ' + link);
+				actions.writeToLogFile('log.txt','Album ('+ albumType +'): ' + album);
 			}
 		});
 	},
@@ -80,7 +82,7 @@ var actions = {
 		actions.displayMessage('Searching for the movie "'+ movie +'"...');
 		request('http://www.omdbapi.com/?t='+ encodeURIComponent(movie) +'&apikey=' + omdb, (error, response, body) => {
 			if (error) {
-				actions.writeToLogFile('Error occurred: ' + error);
+				actions.writeToLogFile('log.txt','Error occurred: ' + error);
 				return console.log('Error occurred: ' + error);
 			}
 			if(body){
@@ -100,16 +102,16 @@ var actions = {
 			  	console.log('Actor(s): '+result.Actors);
 
 			  	// Write data to log file
-			  	actions.writeToLogFile('Title: '+result.Title);
-			  	actions.writeToLogFile('Year: '+result.Year);
-			  	actions.writeToLogFile('IMDB Rating: '+result.Ratings[0].Value);
+			  	actions.writeToLogFile('log.txt','Title: '+result.Title);
+			  	actions.writeToLogFile('log.txt','Year: '+result.Year);
+			  	actions.writeToLogFile('log.txt','IMDB Rating: '+result.Ratings[0].Value);
 			  	if(result.Ratings[1]){
-			  		actions.writeToLogFile('Rotten Tomatoes Rating: '+result.Ratings[1].Value);
+			  		actions.writeToLogFile('log.txt','Rotten Tomatoes Rating: '+result.Ratings[1].Value);
 				}
-			  	actions.writeToLogFile('Country: '+result.Country);
-			  	actions.writeToLogFile('Language: '+result.Language);
-			  	actions.writeToLogFile('Plot: '+result.Plot);
-			  	actions.writeToLogFile('Actor(s): '+result.Actors);
+			  	actions.writeToLogFile('log.txt','Country: '+result.Country);
+			  	actions.writeToLogFile('log.txt','Language: '+result.Language);
+			  	actions.writeToLogFile('log.txt','Plot: '+result.Plot);
+			  	actions.writeToLogFile('log.txt','Actor(s): '+result.Actors);
 			}
 		});
 	},
@@ -123,14 +125,14 @@ var actions = {
 			if (err) throw err;
 
 			// Convert data Buffer to a string
-			var fileData = data.split(',');
+			const fileData = data.split(',');
 
 			// Extract the command from the file
-			var fileCommand = fileData[0];
+			const fileCommand = fileData[0];
 
 			// Extract the query from the file
 			// Remove quotes from query string 
-			var fileQuery = fileData[1].replace(/\"/g,'');
+			const fileQuery = fileData[1].replace(/\"/g,'');
 
 			// Use recursion to run the command from the file
 			if (!(fileCommand === "do-what-it-says")){
@@ -161,13 +163,13 @@ var actions = {
 	// Post specified message to both the console and log file
 	displayMessage: (message) => {
 		console.log(message);
-		actions.writeToLogFile('\r\n-----------------');
-		actions.writeToLogFile(message);
+		actions.writeToLogFile('log.txt','\r\n-----------------');
+		actions.writeToLogFile('log.txt',message);
 	},
 
 	// The writeToLogFile function writes the specified content to the log.txt file
-	writeToLogFile: (content) => {
-		fs.appendFile('log.txt', content + '\r\n', (err) => {
+	writeToLogFile: (logFile, content) => {
+		fs.appendFile(logFile, content + '\r\n', (err) => {
 			if (err) throw err;
 		});	
 	},
@@ -175,3 +177,23 @@ var actions = {
 
 // Start the app!
 actions.execute(process.argv[2], process.argv[3]);
+
+// inquirer.prompt([
+// 	{
+// 		type: "list",
+// 		message: "Welcome, I am LIRI. What would you like to do?",
+// 		choices: ["my-tweets","spotify-this-song","movie-this","do-what-it-says"],
+// 		name: "command"
+// 	}
+// ]).then(response => {
+
+// 	inquirer.prompt([
+// 		{
+// 		 	type: "input",
+// 		 	message: response.command,
+// 		 	name: "commandInput"
+// 	 	}
+// 	]).then(input => {
+// 		actions.execute(response.command, input.commandInput);
+// 	});
+// });
