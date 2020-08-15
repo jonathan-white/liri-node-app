@@ -1,6 +1,6 @@
 {
   "name": "liri-node-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -18,10 +18,10 @@
   },
   "homepage": "https://github.com/MotionSwing/liri-node-app#readme",
   "dependencies": {
-    "dotenv": "^5.0.1",
-    "inquirer": "^5.2.0",
-    "node-spotify-api": "^1.0.7",
-    "request": "^2.88.0",
+    "dotenv": "^8.2.0",
+    "inquirer": "^7.3.3",
+    "node-spotify-api": "^1.1.1",
+    "request": "^2.88.2",
     "twitter": "^1.7.1"
   }
 }

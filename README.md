@@ -2,15 +2,19 @@
 
 ## Purpose
 
-LIRI is a Language Intrepretation and Recognition Interface that takes in a command and a query parameter and returns data.
+LIRI is a Language Interpretation and Recognition Interface that takes in a command and a query parameter and returns data.
 
 ## Getting Started
 
 To use this app you will need your own set of API keys for the Twitter and Spotify APIs.
 
+Syntax:
 $ node liri.js '[enter command here]' '[enter query here]'
 
-Example: $ node liri.js movie-this "Black Panther"
+Example: 
+```
+$ node liri.js movie-this "Black Panther"
+```
 
 ## Commands
 
@@ -30,7 +34,7 @@ Example: $ node liri.js movie-this "Black Panther"
 ## APIs Used
 
 * [Twitter](https://developer.twitter.com/en/docs)
-* [Spotify](https://beta.developer.spotify.com/documentation/web-api/)
+* [Spotify](https://developer.spotify.com/documentation/web-api/)
 * [OMDB](http://www.omdbapi.com/)
 
 ## Node Packages Used
